@@ -10,29 +10,33 @@ export default class AddPerson extends Component {
          age: '',
          ss_num: '',
          gender: 'female',
-         hasTattoos: false
+         hasTattoos: "true"
       }
+   }
+
+   updateState ( prop, val ) {
+      this.setState({ [prop]: val })
    }
 
    render () {
       return (
          <div>
-            <input placeholder="Name" />
-            <input placeholder="Height" />
-            <input placeholder="Age" />
-            <input placeholder="Social Number" />
+            <input placeholder="Name" onChange={ e => this.updateState('name', e.target.value) } />
+            <input placeholder="Height" onChange={ e => this.updateState('height', e.target.value) } />
+            <input placeholder="Age" onChange={ e => this.updateState('age', e.target.value) } />
+            <input placeholder="Social Number" onChange={ e => this.updateState('ss_num', e.target.value) } />
             <div>
                <span>Gender</span>
-               <select>
+               <select onChange={ e => this.updateState('gender', e.target.value) }>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                </select>
             </div>
             <div>
                <span>Has Tattoos</span>
-               <select>
-                  <option value={ true }>Yes</option>
-                  <option value={ false }>No</option>
+               <select onChange={ e => this.updateState('hasTattoos', e.target.value) }>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                </select>
             </div>
          </div>
