@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 
 export default class Person extends Component {
-
-
    render () {
+      const { deletePerson, data } = this.props;
+
       return (
          <div>
             <br />
-            <span>{ this.props.data.name }</span>
+            <span>{ data.name }</span>
             <br />
-            <span>{ this.props.data.gender }</span>
+            <span>{ data.gender }</span>
             <br />
+            <button onClick={ () => deletePerson( data.id ) }>Delete</button>
          </div>
       )
    }

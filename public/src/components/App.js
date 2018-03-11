@@ -14,6 +14,7 @@ class App extends Component {
       }
 
       this.createPerson = this.createPerson.bind(this)
+      this.deletePerson = this.deletePerson.bind(this)
    }
 
    componentDidMount () {
@@ -28,11 +29,17 @@ class App extends Component {
       })
    }
 
+   deletePerson (id) {
+      axios.delete(`http://localhost:3001/api/person/${ id }`).then(r => {
+         this.setState({ data: r.data })
+      })
+   }
+
    render() {
       return (
          <div className="App">
             <AddPerson createPerson={ this.createPerson } />
-            <ListPeople data={ this.state.data } />
+            <ListPeople data={ this.state.data } deletePerson={ this.deletePerson } />
          </div>
       );
    }

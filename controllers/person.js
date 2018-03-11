@@ -27,6 +27,10 @@ module.exports = {
       res.status(200).send(data)
    },
    delete: ( req, res ) => {
+      const personIndex = data.findIndex( person => person.id == req.params.id )
 
+      data.splice(personIndex, 1)
+
+      res.status(200).send(data)
    }
 }
