@@ -6,7 +6,11 @@ export default class Person extends Component {
    render () {
       return (
          <div>
-            <span>Person Component Here</span>
+            <br />
+            <span>{ this.props.data.name }</span>
+            <br />
+            <span>{ this.props.data.gender }</span>
+            <br />
          </div>
       )
    }

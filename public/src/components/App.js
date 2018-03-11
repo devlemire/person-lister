@@ -4,6 +4,7 @@ import axios from 'axios'
 
 // Components
 import AddPerson from './AddPerson/AddPerson'
+import ListPeople from './ListPeople/ListPeople'
 
 class App extends Component {
    constructor () {
@@ -31,6 +32,7 @@ class App extends Component {
       return (
          <div className="App">
             <AddPerson createPerson={ this.createPerson } />
+            <ListPeople data={ this.state.data } />
          </div>
       );
    }
