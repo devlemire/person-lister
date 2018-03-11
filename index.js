@@ -5,6 +5,9 @@ const personController = require('./controllers/person')
 
 const app = express()
 
+app.use( cors() )
+app.use( bodyParser.json() )
+
 app.get('/api/people', personController.get)
 app.post('/api/person', personController.post)
 

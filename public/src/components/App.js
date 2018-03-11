@@ -1,14 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios'
 
 // Components
 import AddPerson from './AddPerson/AddPerson'
 
 class App extends Component {
+   constructor () {
+      super()
+      this.state = {
+         data: []
+      }
+
+      this.createPerson = this.createPerson.bind(this)
+   }
+
+   createPerson (data) {
+      axios.post('http://localhost:3001/api/person', data).then(r => {
+         this.setState({ data: r.data })
+      })
+   }
+
    render() {
       return (
          <div className="App">
-            <AddPerson />
+            <AddPerson createPerson={ this.createPerson } />
          </div>
       );
    }

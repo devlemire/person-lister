@@ -27,19 +27,21 @@ export default class AddPerson extends Component {
             <input placeholder="Social Number" onChange={ e => this.updateState('ss_num', e.target.value) } />
             <div>
                <span>Gender</span>
-               <select onChange={ e => this.updateState('gender', e.target.value) }>
+               <select  onChange={ e => this.updateState('gender', e.target.value) }
+                        value={ this.state.gender }>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                </select>
             </div>
             <div>
                <span>Has Tattoos</span>
-               <select onChange={ e => this.updateState('hasTattoos', e.target.value) }>
+               <select  onChange={ e => this.updateState('hasTattoos', e.target.value) }
+                        value={ this.state.hasTattoos }>
                   <option value="true">Yes</option>
                   <option value="false">No</option>
                </select>
             </div>
-            <button>Create Person!</button>
+            <button onClick={ () => this.props.createPerson(this.state) }>Create Person!</button>
          </div>
       )
    }
