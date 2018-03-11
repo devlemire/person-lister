@@ -1,9 +1,4 @@
-let data = [
-   'string',
-   'string',
-   5,
-   true
-]
+let data = []
 
 module.exports = {
    get: ( req, res ) => {
