@@ -39,6 +39,7 @@ export default class AddPerson extends Component {
                   <option value="false">No</option>
                </select>
             </div>
+            <button>Create Person!</button>
          </div>
       )
    }
