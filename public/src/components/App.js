@@ -15,6 +15,12 @@ class App extends Component {
       this.createPerson = this.createPerson.bind(this)
    }
 
+   componentDidMount () {
+      axios.get('http://localhost:3001/api/people').then(r => {
+         this.setState({ data: r.data })
+      })
+   }
+
    createPerson (data) {
       axios.post('http://localhost:3001/api/person', data).then(r => {
          this.setState({ data: r.data })
