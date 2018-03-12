@@ -6,7 +6,13 @@ module.exports = {
       res.status(200).send(data)
    },
    put: ( req, res ) => {
+      console.log( req.params.id )
+      const personIndex = data.findIndex(person => person.id == req.params.id)
+      console.log(personIndex)
 
+      data[ personIndex ].name = req.body.name
+
+      res.status(200).send(data)
    },
    post: ( req, res ) => {
       console.log(req.body)

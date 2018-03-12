@@ -10,6 +10,7 @@ app.use( bodyParser.json() )
 
 app.get('/api/people', personController.get)
 app.post('/api/person', personController.post)
+app.put('/api/person/:id', personController.put)
 app.delete('/api/person/:id', personController.delete)
 
 const port = 3001

@@ -6,7 +6,8 @@ export default class ListPeople extends Component {
       const people = this.props.data.map(item => (
          <Person  key={ item.id } 
                   data={ item } 
-                  deletePerson={ this.props.deletePerson } />
+                  deletePerson={ this.props.deletePerson }
+                  updateName={ this.props.updateName } />
       ))
 
       return (
